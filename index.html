@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        th {
+            padding: 5px 20px;
+        }
+        td {
+            padding: 5px 10px;
+            text-align: center;
+        }
+        table, tr, th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn-primary" id="printPDF" onclick="printPDF()">Print PDF</button>
+    <table style="margin: auto;" id="printContent">
+        <thead>
+            table of content
+        </thead>
+        <tr>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td>01</td>
+            <td>shaddy</td>
+            <td>22</td>
+        </tr>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+    integrity="sha512-cLuyDTDg9CSseBSFWNd4wkEaZ0TBEpclX0zD3D6HjI19pO39M58AgJ1SjHp6c7ZOp0/OCRcC2BCvvySU9KJaGw=="
+    crossorigin="anonymous"></script>
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script>
+        // var doc = new jsPDF();
+        function printPDF() {
+      html2canvas(document.getElementById('printContent'), {height: document.body.clientHeight, width: document.body.clientWidth}).then(function (canvas) {
+        // document.body.appendChild(canvas);
+        var wid;
+        var hgt;
+
+        var img = canvas.toDataURL("image/png", wid = canvas.width, hgt = canvas.height);
+        var hratio = hgt / wid
+        var doc = new jsPDF('p', 'pt', 'a4');
+        var width = doc.internal.pageSize.width;
+        var height = width * hratio
+        doc.addImage(img, 'JPEG', 20, 20, width, height);
+        doc.addPage()
+        doc.save('Test.pdf');
+      });
+
+    }
+    </script>
+</body>
+</html>
